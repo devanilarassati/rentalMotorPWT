@@ -288,5 +288,14 @@ class Model_App extends CI_Model
         where id_identitas = '$id'
         ")->result();
     }
+
+    function getJenisKelamin($id)
+    {
+        return $this->db->query("
+        SELECT *
+        FROM tbl_gender
+        where id_gender = '$id'
+        ")->result();
+    }
 }
     

@@ -25,6 +25,7 @@ class Login_Controller extends CI_Controller
             'active_daftar' => 'active',
 
             'data_identitas' => $this->Model_App->getAllData('tbl_identitas'),
+            'data_gender' => $this->Model_App->getAllData('tbl_gender')
         );
 
         $this->load->view('elements/vHeaderCustomer', $data);
@@ -53,6 +54,8 @@ class Login_Controller extends CI_Controller
         $jk             = $this->input->post('jk');
         $id_identitas   = $this->input->post('id_identitas');
         $no_identitas   = $this->input->post('no_identitas');
+        $id_gender   = $this->input->post('id_gender');
+        $jenis_kelamin   = $this->input->post('jenis_kelamin');
         $almt_user      = $this->input->post('almt_user');
         $email_user     = $this->input->post('email_user');
         $notelp_user    = $this->input->post('notelp_user');
@@ -66,6 +69,7 @@ class Login_Controller extends CI_Controller
             // 'jk' => $this->input->post('jk'),
             'id_identitas' => $this->input->post('id_identitas'),
             // 'no_identitas' => $this->input->post('no_identitas'),
+            'id_gender' => $this->input->post('id_gender'),
             'almt_user' => $this->input->post('almt_user'),
             'email_user' => $this->input->post('email_user'),
             'notelp_user' => $this->input->post('notelp_user'),

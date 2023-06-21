@@ -28,6 +28,9 @@
                         </select>
                     </label>
                 </div>
+
+             
+
                 <div class="col-sm-5">
                     <label for="username" class="form-label">Username
                         <input type="text" class="validate[required,minSize[6]] form-control" name="username"
@@ -35,9 +38,20 @@
                 </div>
 
                 <div class="col-sm-5">
-                    <label for="nm_user" class="form-label">Jenis Kelamin
-                        <input type="text" class="validate[required,minSize[6]] form-control" name="jk" id="jk"
-                            required></label>
+                    <label for="id_gender">Jenis Kelamin
+                        <select class="form-control" name="id_identitas">
+                            <option value=""></option>
+                            <?php
+                            if (isset($data_gender)) {
+                                foreach ($data_gender as $row) {
+                            ?>
+                            <option value="<?php echo $row->id_gender; ?> "><?php echo $row->jenis_kelamin; ?>
+                            </option>
+                            <?php }
+                            }  
+                            ?>
+                        </select>
+                    </label>
                 </div>
 
                 <div class="col-sm-5">
@@ -47,19 +61,25 @@
                 </div>
                 <div class="col-sm-5">
                     <label for="no_identitas" class="form-label">Nomor Identitas/NIK
-                        <input type="text" class="validate[required,minSize[6]] form-control" name="no_identitas"
+                        <input type="number" class="validate[required,minSize[6]] form-control" name="no_identitas"
                             id="no_identitas" required></label>
                 </div>
+
                 <div class="col-sm-5">
                     <label for="almt_user" class="form-label">Alamat Anda
                         <input type="text" class="validate[required,minSize[6]] form-control" name="almt_user"
                             id="almt_user" required></label>
                 </div>
+
                 <div class="col-sm-5">
                     <label for="notelp_user" class="form-label">Nomor Telepon Anda
-                        <input type="text" class="validate[required,minSize[6]] form-control" name="notelp_user"
-                            id="notelp_user" required></label>
+                        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+                        type="number"  maxlength="12" class="validate[required,minSize[6]] form-control" name="notelp_user"
+                        id="notelp_user"  required>
+                        </label>
+                        
                 </div>
+
                 <div class="col-sm-5">
                     <label for="email_users" class="form-label">Email Anda
                         <input type="text" class="validate[required,minSize[6]] form-control" name="email_user"
