@@ -112,6 +112,11 @@ class Login_Controller extends CI_Controller
         } else {
             //jika validasi salah
             redirect('Login_Controller/', 'refresh');
+            echo "
+        <script type='text/javascript'>
+        alert('Username & Password Anda Salah!');
+        history.back(self);
+        </script>";
             return FALSE;
         }
     }

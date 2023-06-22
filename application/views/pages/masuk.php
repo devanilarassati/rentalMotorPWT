@@ -18,13 +18,25 @@
         <form method="post" action="<?php echo site_url('Login_Controller/prosesLogin') ?>" id="popup-validation">
             <div class="col-sm">
                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" class="validate[required,minSize[6]] form-control" name="username" id="username"
+                <input type="text" class="validate[required,minSize[6]] form-control" title="Username yang anda masukkan salah." name="username" id="username"
                     required>
             </div>
             <div class="col-sm">
                 <label for="exampleInputEmail1" class="form-label">Password</label>
                 <input class="validate[required,minSize[6]] form-control" type="password" name="password" id="password"
                     required />
+                    <br>
+                    <input type="checkbox" onclick="myFunction()">Show Password
+                                <script>
+                                    function myFunction() {
+                                        var x = document.getElementById("password");
+                                        if (x.type === "password") {
+                                            x.type = "text";
+                                        } else {
+                                            x.type = "password";
+                                        }
+                                    }
+                                </script>
             </div>
             <div class="mb-3">
                 <hr>

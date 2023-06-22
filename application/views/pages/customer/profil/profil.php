@@ -25,7 +25,7 @@
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row->nm_user; ?></td>
                         <td><?php echo $row->username; ?></td>
-                        <td><?php echo $row->jk; ?></td>
+                        <td><?php echo $row->jenis_kelamin; ?></td>
                         <td><?php echo $row->no_identitas; ?></td>
                         <td><?php echo $row->almt_user; ?></td>
                         <td><?php echo $row->notelp_user; ?></td>
