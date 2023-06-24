@@ -22,7 +22,7 @@ class Admin_Controller extends CI_Controller
             'namaAplikasi'=>'Rental Motor PWT Online',
 
 
-            'data_contact' => $this->Model_App->getAllData('tbl_contact'),
+            'data_contact' => $this->Model_App->getAllData('tbl_user'),
 
         );
 

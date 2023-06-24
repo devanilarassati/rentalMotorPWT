@@ -6,7 +6,7 @@
             </div>
             <div class="panel-body">
                 <?php if (isset($data_contact)) {
-                    foreach ($data_contact as $row) {
+                    // foreach ($data_contact as $row) {
                 ?>
                 <div class="col-lg-6">
                     <dl class="dl-horizontal">
@@ -38,7 +38,7 @@
                         <dd>&nbsp</dd>
                     </dl>
                 </div>
-                <?php }
+                <?php //}
                 }
                 ?>
             </div>

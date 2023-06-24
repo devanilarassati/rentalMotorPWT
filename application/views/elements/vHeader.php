@@ -80,9 +80,4 @@
         </div>
     </nav>
 
-    <div class="mainTitle">
-        <div class="container">
-            <h1>Rental Motor PWT</h1>
-            <h1> </h1>
-        </div>
-    </div>
+  

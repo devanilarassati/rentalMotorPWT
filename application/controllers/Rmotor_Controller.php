@@ -151,6 +151,7 @@ class Rmotor_Controller extends CI_Controller
     //syarat
     function syarat()
     {
+        $id = $this->uri->segment(3);
         $data = array(
             'title' => 'RMotor Online',
             'active_syarat' => 'active'
@@ -160,6 +161,43 @@ class Rmotor_Controller extends CI_Controller
         $this->load->view('pages/syarat');
         $this->load->view('elements/vFooterCustomer');
     }
+
+    public function contact()
+    {
+    $data['meta'] = [
+        'title' => 'Contact Us',
+    ];
+    $this->load->library('form_validation');
+
+    $this->load->view('elements/vHeader', $data);
+    $this->load->view('pages/contact');
+    $this->load->view('elements/vFooterCustomer');
+
+    if ($this->input->method() === 'post') {
+        $this->load->model('Feedback_model');
+
+        $rules = $this->Feedback_model->rules();
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == FALSE) {
+        return $this->load->view('pages/contact');
+        }
+
+        $feedback = [
+        // 'id_contact' => uniqid('', true),
+        'nama' => $this->input->post('nama'),
+        'email' => $this->input->post('email'),
+        'pesan' => $this->input->post('pesan')
+        ];
+
+        // $feedback_saved = $this->Feedback_model->insert($tbl_contact);
+        $this->Model_App->insertData('tbl_contact', $feedback);
+
+        redirect("Rmotor_Controller");
+
+    }
+}
+
     //kontak
     function kontak()
     {
