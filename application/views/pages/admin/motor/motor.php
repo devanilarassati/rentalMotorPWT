@@ -18,6 +18,7 @@
                                 <th>Tahun Buat</th>
                                 <th>Warna</th>
                                 <th>Merk</th>
+                                <th>CC Motor</th>
                                 <th>Stok</th>
                                 <th>
                                     <a href="<?php echo site_url('Admin_Controller/tambahmotor'); ?>"
@@ -44,6 +45,7 @@
                                 <td><?php echo $row->thn_buat; ?></td>
                                 <td><?php echo $row->nm_warna; ?></td>
                                 <td><?php echo $row->nm_merek; ?></td>
+                                <td><?php echo $row->cc_motor; ?></td>
                                 <td><?php echo $row->stok_motor; ?></td>
                                 <td>
                                     <a href="<?php echo site_url('Admin_Controller/editmotor/' . $row->id_motor); ?>"
