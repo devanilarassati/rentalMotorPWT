@@ -13,14 +13,14 @@
                             maxlength="40" minlength="3" id="nm_user" required></label>
                 </div>
                 <div class="col-sm-5">
-                    <label for="id_identitas">Pilih Identitas
-                        <select class="form-control" name="id_identitas">
+                    <label for="nm_identitas">Pilih Identitas
+                        <select class="form-control" name="nm_identitas">
                             <option value=""></option>
                             <?php
                             if (isset($data_identitas)) {
                                 foreach ($data_identitas as $row) {
                             ?>
-                            <option value="<?php echo $row->id_identitas; ?> "><?php echo $row->nm_identitas; ?>
+                            <option value="<?php echo $row->nm_identitas; ?> "><?php echo $row->nm_identitas; ?>
                             </option>
                             <?php }
                             }  
@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="col-sm-5">
-                    <label for="id_gender">Jenis Kelamin
-                        <select class="form-control" name="id_identitas">
+                    <label for="jenis_kelamin">Jenis Kelamin
+                        <select class="form-control" name="jenis_kelamin">
                             <option value=""></option>
                             <?php
                             if (isset($data_gender)) {

@@ -14,7 +14,7 @@
                         <div class="col-lg-8">
                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                 <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                    <img src="<?php echo base_url('assets/admin/img/demoUpload.jpg') ?>" alt="" />
+                                    <img src="<?php echo base_url('../uploads') ?>" alt="" />
                                 </div>
                                 <div class="fileupload-preview fileupload-exists thumbnail"
                                     style="max-width: 200px; max-height: 150px; line-height: 20px;">

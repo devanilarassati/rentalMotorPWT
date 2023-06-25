@@ -104,7 +104,7 @@ class Model_App extends CI_Model
     function getAllCutomer()
     {
         return $this->db->query("
-        SELECT * FROM tbl_user a INNER JOIN tbl_identitas b ON a.id_identitas = b.id_identitas WHERE lvl_user = 'customer' ORDER BY nm_user ASC
+        SELECT * FROM tbl_user a INNER JOIN tbl_identitas b ON a.nm_identitas = b.nm_identitas WHERE lvl_user = 'customer' ORDER BY nm_user ASC
         ")->result();
     }
     function getAllDataCustomer()
@@ -280,6 +280,7 @@ class Model_App extends CI_Model
     {
         return $this->db->get('tbl_motor');
     }
+
     function getIdentitas($id)
     {
         return $this->db->query("
@@ -293,7 +294,7 @@ class Model_App extends CI_Model
     {
         return $this->db->query("
         SELECT *
-        FROM tbl_gender
+        FROM tbl_jk
         where id_gender = '$id'
         ")->result();
     }

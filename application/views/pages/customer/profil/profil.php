@@ -9,6 +9,7 @@
                         <th>Nama Customer</th>
                         <th>Username</th>
                         <th>Jenis Kelamin</th>
+                        <th>Nama Identitas</th>
                         <th>no_identitas</th>
                         <th>Alamat</th>
                         <th>No Telp</th>
@@ -26,11 +27,13 @@
                         <td><?php echo $row->nm_user; ?></td>
                         <td><?php echo $row->username; ?></td>
                         <td><?php echo $row->jenis_kelamin; ?></td>
+                        <td><?php echo $row->nm_identitas; ?></td>
+                        <!-- <td><?php echo $row->id_gender; ?></td> -->
+                        <!-- <td><?php echo $row->id_identitas; ?></td> -->
                         <td><?php echo $row->no_identitas; ?></td>
                         <td><?php echo $row->almt_user; ?></td>
                         <td><?php echo $row->notelp_user; ?></td>
                         <td><?php echo $row->email_user; ?></td>
-
                     </tr>
                     <?php }
                     }

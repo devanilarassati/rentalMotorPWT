@@ -25,7 +25,7 @@ class Login_Controller extends CI_Controller
             'active_daftar' => 'active',
 
             'data_identitas' => $this->Model_App->getAllData('tbl_identitas'),
-            'data_gender' => $this->Model_App->getAllData('tbl_gender')
+            'data_gender' => $this->Model_App->getAllData('tbl_jk')
         );
 
         $this->load->view('elements/vHeaderCustomer', $data);
@@ -51,11 +51,11 @@ class Login_Controller extends CI_Controller
         $password       = $this->input->post('password');
         $lvl_user       = $this->input->post('lvl_user');
         $nm_user        = $this->input->post('nm_user');
-        $jk             = $this->input->post('jk');
-        $id_identitas   = $this->input->post('id_identitas');
+        $jk             = $this->input->post('jenis_kelamin');
+        $nm_identitas   = $this->input->post('nm_identitas');
+        // $id_gender      = $this->input->post('id_gender');
+        // $id_identitas   = $this->input->post('id_identitas');
         $no_identitas   = $this->input->post('no_identitas');
-        $id_gender   = $this->input->post('id_gender');
-        $jenis_kelamin   = $this->input->post('jenis_kelamin');
         $almt_user      = $this->input->post('almt_user');
         $email_user     = $this->input->post('email_user');
         $notelp_user    = $this->input->post('notelp_user');
@@ -66,10 +66,11 @@ class Login_Controller extends CI_Controller
             'password' => $this->input->post('password'),
             'lvl_user' => $this->input->post('lvl_user'),
             'nm_user' => $this->input->post('nm_user'),
-            // 'jk' => $this->input->post('jk'),
-            'id_identitas' => $this->input->post('id_identitas'),
-            // 'no_identitas' => $this->input->post('no_identitas'),
-            'id_gender' => $this->input->post('id_gender'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'nm_identitas' => $this->input->post('nm_identitas'),
+            // 'id_gender' => $this->input->post('id_gender'),
+            // 'id_identitas' => $this->input->post('id_identitas'),
+            'no_identitas' => $this->input->post('no_identitas'),
             'almt_user' => $this->input->post('almt_user'),
             'email_user' => $this->input->post('email_user'),
             'notelp_user' => $this->input->post('notelp_user'),
@@ -159,8 +160,10 @@ class Login_Controller extends CI_Controller
             'password' => $this->input->post('password'),
             'lvl_user' => $this->input->post('lvl_user'),
             'nm_user' => $this->input->post('nm_user'),
-            'jk' => $this->input->post('jk'),
-            'id_identitas' => $this->input->post('id_identitas'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'nm_identitas' => $this->input->post('nm_identitas'),
+            // 'id_gender' => $this->input->post('id_gender'),
+            // 'id_identitas' => $this->input->post('id_identitas'),
             'no_identitas' => $this->input->post('no_identitas'),
             'almt_user' => $this->input->post('almt_user'),
             'email_user' => $this->input->post('email_user'),
