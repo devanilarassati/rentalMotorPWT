@@ -18,6 +18,7 @@ class Rmotor_Controller extends CI_Controller
         $this->load->view('elements/vHeaderCustomer', $data);
         $this->load->view('pages/home');
         $this->load->view('elements/vFooterCustomer');
+        
     }
 
     function tambahMenuToCart($id_motor)
