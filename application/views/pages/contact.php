@@ -34,5 +34,6 @@
 		</form>
 	</div>
 </body>
-	<?php $this->load->view('elements/vFooterCustomer'); ?>
+	<!-- <?php $this->load->view('elements/vFooterCustomer'); ?> -->
+	
 </html>
