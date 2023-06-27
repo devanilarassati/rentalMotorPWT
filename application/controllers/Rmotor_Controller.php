@@ -172,7 +172,7 @@ class Rmotor_Controller extends CI_Controller
 
     $this->load->view('elements/vHeader', $data);
     $this->load->view('pages/contact');
-    $this->load->view('elements/vFooterCustomer');
+    // $this->load->view('elements/vFooterCustomer');
 
     if ($this->input->method() === 'post') {
         $this->load->model('Feedback_model');
