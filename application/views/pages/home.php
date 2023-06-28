@@ -4,7 +4,7 @@
 
 <style>
         body{
-            background-image: url(assets/image/rp.jpg);
+            background-image: url(assets/image/bg.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
