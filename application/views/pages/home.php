@@ -2,7 +2,7 @@
 <link rel="stylesheet"  href="../assets/css/kelebihanWeb.css" >
 <link rel="stylesheet"  type="text/css" href="../assets/fontawesome/css/all.min.css" >
 
-<style>
+<!-- <style>
         body{
             background-image: url(assets/image/bg.jpg);
             background-size: cover;
@@ -18,7 +18,41 @@
         }
 
         
-    </style>
+    </style> -->
+
+<!-- STYLE TEXT DIGAMBAR -->
+<style>
+      .image-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .image-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+      }
+
+      .image-text h1 {
+        font-size: 60px;
+      }
+
+      .image-text p {
+        font-size: 30px;
+      }
+ </style>
+
+<div class="image-container">
+    <img src="assets/image/rp2.jpg" width="1500" height="600" >
+    <div class="image-text">
+      <h1><b>Rental Motor PWT</b></h1>
+      <p><b>Cepat, Mudah, dan Nyaman</b></p>
+  </div>
+</div>
+
 
 <br><br>
 <!-- Container (Kelebihan Rental Motor PWT) -->
