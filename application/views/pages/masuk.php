@@ -1,3 +1,5 @@
+<link rel="stylesheet"  href="../assets/css/style.css" >
+
 <div class="mainTitle">
     <div class="container">
         <?php
@@ -14,9 +16,9 @@
 <div class="row justify-content-md-center align-items-center">
     <H1 class="display-6 text-center">Selamat Datang</H1>
     <!-- Indicators -->
-    <div class=" col-sm-4">
+    <div class="col-sm-4">
         <form method="post" action="<?php echo site_url('Login_Controller/prosesLogin') ?>" id="popup-validation">
-            <div class="col-sm">
+            <div class="col-sm" >
                 <label for="exampleInputEmail1" class="form-label">Username</label>
                 <input type="text" class="validate[required,minSize[6]] form-control" title="Username yang anda masukkan salah." name="username" id="username"
                     required>

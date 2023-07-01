@@ -49,6 +49,9 @@ class Login_Controller extends CI_Controller
 
         $username       = $this->input->post('username');
         $password       = $this->input->post('password');
+        // Mengenkripsi password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
         $lvl_user       = $this->input->post('lvl_user');
         $nm_user        = $this->input->post('nm_user');
         $jk             = $this->input->post('jenis_kelamin');
@@ -63,7 +66,7 @@ class Login_Controller extends CI_Controller
 
         $data = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => $hashedPassword,
             'lvl_user' => $this->input->post('lvl_user'),
             'nm_user' => $this->input->post('nm_user'),
             'jenis_kelamin' => $this->input->post('jenis_kelamin'),
@@ -84,42 +87,109 @@ class Login_Controller extends CI_Controller
     function prosesLogin()
     {
 
+        // $username = $this->input->post('username');
+        // $password = $this->input->post('password');
+        // //query the database
+        // $result = $this->Model_App->login($username);
+
+
+
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        //query the database
-        $result = $this->Model_App->login($username, $password);
-        if ($result) {
-            $sess_array = array();
-            foreach ($result as $row) {
-                //create the session
-                $sess_array = array(
-                    'ID' => $row->id_user,
-                    'USERNAME' => $row->username,
-                    'PASS' => $row->password,
-                    'NAME' => $row->nm_user,
-                    'LEVEL' => $row->lvl_user,
-                    'login_status' => true,
-                );
-                //set session with value from database
-                $this->session->set_userdata($sess_array);
 
-                if ($this->session->userdata('LEVEL') == 'customer') {
-                    redirect('Rmotor_Controller', 'refresh');
-                } else {
-                    redirect('Admin_Controller', 'refresh');
-                }
-            }
-            return TRUE;
+// Query the database to get user data by username
+$user = $this->Model_App->getUserByUsername($username);
+
+if ($user) {
+    $hashedPassword = $user->password; // Password yang telah dienkripsi yang disimpan di database
+
+    // Memeriksa kecocokan password yang diinputkan dengan password yang telah dienkripsi
+    if (password_verify($password, $hashedPassword)) {
+        $sess_array = array(
+            'ID' => $user->id_user,
+            'USERNAME' => $user->username,
+            'PASS' => $hashedPassword,
+            'NAME' => $user->nm_user,
+            'LEVEL' => $user->lvl_user,
+            'login_status' => true,
+        );
+
+        // Set session with values from database
+        $this->session->set_userdata($sess_array);
+
+        if ($this->session->userdata('LEVEL') == 'customer') {
+            redirect('Rmotor_Controller', 'refresh');
         } else {
-            //jika validasi salah
-            redirect('Login_Controller/', 'refresh');
-            echo "
-        <script type='text/javascript'>
-        alert('Username & Password Anda Salah!');
-        history.back(self);
-        </script>";
-            return FALSE;
+            redirect('Admin_Controller', 'refresh');
         }
+        return TRUE;
+    }
+}
+
+// Jika validasi salah atau user tidak ditemukan
+echo "<script type='text/javascript'> alert('Username atau Password Anda Salah, Silahkan coba lagi!!');
+    history.back(self);</script>";
+redirect('Login_Controller/', 'refresh');
+return FALSE;
+
+
+        // if ($result && password_verify($password, $result['password'])) {
+        //     $sess_array = array(
+        //             'ID' => $result[0]->id_user,
+        //             'USERNAME' => $result[0]->username,
+        //             'PASS' => $result[0]->password,
+        //             'NAME' => $result[0]->nm_user,
+        //             'LEVEL' => $result[0]->lvl_user,
+        //             'login_status' => true,
+        //     );
+        
+        //     // Set session with values from database
+        //     $this->session->set_userdata($sess_array);
+        
+        //     if ($this->session->userdata('LEVEL') == 'customer') {
+        //         redirect('Rmotor_Controller', 'refresh');
+        //     } else {
+        //         redirect('Admin_Controller', 'refresh');
+        //     }
+        //     return TRUE;
+        // } else {
+        //     // Jika validasi salah
+        //     echo "<script type='text/javascript'> alert('Username atau Password Anda Salah, Silahkan coba lagi!!');
+        //     history.back(self);</script>";
+        //     redirect('Login_Controller/', 'refresh');
+        //     return FALSE;
+        // }
+        
+
+        // if ($result && password_verify($password, $result['password'])) {
+        //     $sess_array = array();
+        //     foreach ($result as $row) {
+        //         //create the session
+        //         $sess_array = array(
+        //             'ID' => $row->id_user,
+        //             'USERNAME' => $row->username,
+        //             'PASS' => $row->password,
+        //             'NAME' => $row->nm_user,
+        //             'LEVEL' => $row->lvl_user,
+        //             'login_status' => true,
+        //         );
+        //         //set session with value from database
+        //         $this->session->set_userdata($sess_array);
+
+        //         if ($this->session->userdata('LEVEL') == 'customer') {
+        //             redirect('Rmotor_Controller', 'refresh');
+        //         } else {
+        //             redirect('Admin_Controller', 'refresh');
+        //         }
+        //     }
+        //     return TRUE;
+        // } else {
+        //     //jika validasi salah
+        //     echo "<script type='text/javascript'> alert('Username atau Password Anda Salah, Silahkan coba lagi!!');
+        //     history.back(self);</script>";
+        //     return FALSE;
+        //     redirect('Login_Controller/', 'refresh');
+        // }
     }
 
 

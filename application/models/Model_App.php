@@ -59,14 +59,14 @@ class Model_App extends CI_Model
     }
 
     //  Cek Login 
-
-    function login($username, $password)
+    // ($username, $password)
+    function login($username) 
     {
         //create query to connect user login database
         $this->db->select('*');
         $this->db->from('tbl_user');
         $this->db->where('username', $username);
-        $this->db->where('password', $password);
+        // $this->db->where('password', $password);
         $this->db->limit(1);
 
         //get query and processing
@@ -77,6 +77,31 @@ class Model_App extends CI_Model
             return false; //if data is wrong
         }
     }
+
+//     public function getUserByUsername($username)
+// {
+//     $query = $this->db->get_where('tbl_user', array('username' => $username));
+//     $query = $this->db->get();
+//         if ($query->num_rows() == 1) {
+//             return $query->result(); //if data is true
+//         } else {
+//             return false; //if data is wrong
+//         }
+//     // return $query->row_array();
+// }
+
+    public function getUserByUsername($username)
+    {
+        $this->db->where('username', $username);
+        $query = $this->db->get('tbl_user');
+        
+        if ($query->num_rows() == 1) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
+
 
     //  Pegawai   
 
