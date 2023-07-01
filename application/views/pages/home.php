@@ -107,7 +107,7 @@
 
 <br><br>
 <div class="container marketing">
-<br>
+  <br>
     <h2 class=" display-6 text-center">Daftar Sewa Motor PWT</h2>
     <hr>
     <?php if ($this->cart->total_items() != '0') { ?>
@@ -152,23 +152,6 @@
         </div>
     </div>
 
-    
-      <!-- <div  class=whatsapp-button>
-    <a href="https://api.whatsapp.com/send?082265107472" target="_blank" class="whatsapp-button">
-  <i class="fa fa-whatsapp"></i> Hubungi Kami
-</a>
-        </div> -->
-<!-- <a href="https://api.whatsapp.com/send?phone=910000000000&text=Hello this is the starting message">Whatsapp Chat</a> -->
-  <!-- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var whatsappButton = document.querySelector('.whatsapp-button');
-    whatsappButton.style.display = 'none';
-
-    setTimeout(function() {
-      whatsappButton.style.display = 'flex';
-    }, 2000); // Ubah angka 2000 menjadi jumlah milidetik yang diinginkan sebelum tombol muncul
-  });
-  </script> -->
 </div>
 
 <br><br><br><br>
@@ -185,10 +168,9 @@
   </div>
 
 <br><br>
-<!-- Container (Kelebihan Rental Motor PWT) -->
+<!-- Dokumentasi Rental Motor PWT -->
 <div id="services" class="container-fluid text-center">
   <h2>Dokumentasi Rental Motor PWT</h2>
-  <h4>Cepat, Mudah, dan Nyaman</h4>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
@@ -196,21 +178,15 @@
       <i class = "fab fa-youtube "> </i>
       <!-- <img src="assets/image/rental.jpg" width:"300px" height:"300px" > -->
       <object data="assets/image/rental.jpg" width="400" height="400"> </object>
-      <h4>2 Helm & 2 Jas Hujan</h4>
-      <p>Anda akan Mendapatkan sepasang helm dan Jas Hujan</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <span class="mdi mdi-atv"></span>
       <object data="assets/image/rental2.jpeg" width="400" height="400"> </object>
-      <h4>Surat dan Dokumen Lengkap</h4>
-      <p>Surat STNK yang lengkap dan pastinya aman</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
       <object data="assets/image/rental3.jpeg" width="400" height="400"> </object>
-      <h4>Jasa Antar Jemput</h4>
-      <p>Dapat menjemput dan mengantar motor sesuai request user</p>
     </div>
   </div>
   <br><br>
@@ -218,19 +194,13 @@
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-leaf logo-small"></span>
       <object data="assets/image/rental5.jpeg" width="400" height="400"> </object>
-      <h4>Banyak Tipe Unit</h4>
-      <p>Terdapat banyak pilihan Motor</p>
     </div>
     <div class="col-sm-4">
       <object data="assets/image/rental 4.jpeg" width="400" height="400"> </object>
-      <h4>Asuransi Keamanan</h4>
-      <p>Anda akan mendapatkan jaminan asuransi keamanan</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-wrench logo-small"></span>
       <object data="assets/image/rental6.jpeg" width="400" height="400"> </object>
-      <h4 style="color:#303030;">Kondisi Motor Bagus</h4>
-      <p>Motor selalu diservis setiap bulannya</p>
     </div>
   </div>
 </div>
