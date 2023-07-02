@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/contact.css">
 <body>
 	<link rel="stylesheet"  href="../assets/css/contact.css" >
 
+	<!--style untuk informasi website dan contact  -->
+<style>
+	.container-f {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-right: 80px;
+    	padding-left: 80px;
+	}
+
+	.contact-form {
+		flex: 1;
+		margin-right: 20px;
+		
+	}
+	
+	.contact-form h1 {
+  		text-align: center;
+	}
+
+	.contact-f h1 {
+  		text-align: center;
+	}
+
+	.contact-info {
+		flex: 1;
+		margin-left: 60px;
+	}
+
+</style>
+
 	<?php $this->load->view('elements/vHeader'); ?>
 	<br><br><br>
-	<div class="container">
+	<div class="text-center">
 		<h1>Contact Us</h1>
-		<p>Hubungi kami melalui form berikut</p>
+		</div>
+	<div class="container-f">
+		<div  class="contact-form">
 		<form action="" method="post" action="<?php echo site_url('Rmotor_Controller/contact') ?>" style="max-width: 600px;">
 			<div>
 				<label for="nama">Nama*</label>
-				<input type="text" name="nama" class="<?= form_error('nama') ? 'invalid' : '' ?>" placeholder="your name" value="<?= set_value('nama') ?>" />
+				<input type="text" name="nama" class="<?= form_error('nama') ? 'invalid' : '' ?>" placeholder="your name" value="<?= set_value('nama') ?>" required />
 				<div class="invalid-feedback"><?= form_error('Nama') ?></div>
 			</div>
 			<div>
 				<label for="email">Email*</label>
-				<input type="email" name="email" class="<?= form_error('email') ? 'invalid' : '' ?>" placeholder="your email address" value="<?= set_value('email') ?>" />
+				<input type="email" name="email" class="<?= form_error('email') ? 'invalid' : '' ?>" placeholder="your email address" value="<?= set_value('email') ?>" required />
 				<div class="invalid-feedback"><?= form_error('Email') ?></div>
 			</div>
 			<div>
 				<label for="pesan">Pesan*</label><br>
-				<textarea name="pesan" cols="30" class="<?= form_error('pesan') ? 'invalid' : '' ?>" rows="5" placeholder="write your message"><?= set_value('pesan') ?></textarea>
+				<textarea name="pesan" cols="30" required class="<?= form_error('pesan') ? 'invalid' : '' ?>" rows="5" placeholder="write your message"><?= set_value('pesan') ?></textarea>
 				<div class="invalid-feedback"><?= form_error('Pesan') ?></div>
 			</div>
 
@@ -30,8 +64,23 @@
 				<input type="submit" class="button button-primary" value="Kirim">
 				<input type="reset" class="button" value="Reset">
 			</div>
-		</form>								
+		</form>	
+									
 		</div>
+
+			<div class="contact-info">
+				<br><br>
+				<p>Silakan hubungi kami melalui form atau kontak berikut.</p>
+				<p><i class="fas fa-map-marker-alt"></i> Alamat: 123 Street, City, Country</p>
+				<p><i class="fab fa-whatsapp"></i> Telepon/Whatsapp: 0822 - 6510 - 7472</p>
+				<p><i class="far fa-calendar-plus"></i> Hari Buka: Setiap Hari</p>
+				<p><i class="far fa-clock"></i> Jam Buka: 06.00 - 22.00</p>
+				<p><i class="far fa-envelope"></i> Email: rentalmotorpwt@gmail.com</p>
+				<p><i class="fab fa-instagram"></i> Instagram: @rentalmotorpwtAja</p>
+			</div>
+
+	</div>
+		
 	</body>
 
 

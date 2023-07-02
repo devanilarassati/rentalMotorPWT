@@ -31,7 +31,6 @@
     <!-- navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top ">
-    <!-- <img src="assets/image/logo.jpg" alt="Logo" class="img-fluid"> -->
         <div class="container">
             <a class="navbar-brand" href="">
             <img src="assets/image/logo.jpg" alt="Logo" class="img-fluid">    

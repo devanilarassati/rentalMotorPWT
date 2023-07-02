@@ -172,7 +172,6 @@ class Rmotor_Controller extends CI_Controller
 
     $this->load->view('elements/vHeader', $data);
     $this->load->view('pages/contact');
-    // $this->load->view('elements/vFooterCustomer');
 
     if ($this->input->method() === 'post') {
         $this->load->model('Feedback_model');
@@ -181,7 +180,8 @@ class Rmotor_Controller extends CI_Controller
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == FALSE) {
-        return $this->load->view('pages/contact');
+            $data['error_message'] = 'Form validation failed. Please check your inputs.';
+    $this->load->view('pages/contact', $data);
         }
 
         $feedback = [
