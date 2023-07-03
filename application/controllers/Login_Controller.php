@@ -12,7 +12,7 @@ class Login_Controller extends CI_Controller
             'active_login' => 'active',
         );
 
-        $this->load->view('elements/vHeaderCustomer', $data);
+        $this->load->view('elements/vHeader', $data);
         $this->load->view('pages/masuk');
         $this->load->view('elements/vFooterCustomer');
         

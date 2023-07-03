@@ -15,9 +15,9 @@ class Rmotor_Controller extends CI_Controller
         //     '$title1' => $this->Model_App->namaAplikasi(),
         // );
 
-        $this->load->view('elements/vHeaderCustomer', $data);
+        $this->load->view('elements/vHeader', $data);
         $this->load->view('pages/home');
-        $this->load->view('elements/vFooterCustomer');
+        // $this->load->view('elements/vFooterCustomer');
         
     }
 
@@ -170,7 +170,7 @@ class Rmotor_Controller extends CI_Controller
     ];
     $this->load->library('form_validation');
 
-    $this->load->view('elements/vHeader', $data);
+    $this->load->view('elements/vHeaderCustomer');
     $this->load->view('pages/contact');
 
     if ($this->input->method() === 'post') {

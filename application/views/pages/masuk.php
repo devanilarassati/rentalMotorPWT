@@ -13,6 +13,7 @@
     </div>
 </div>
 
+<br><br><br>
 <div class="row justify-content-md-center align-items-center">
     <H1 class="display-6 text-center">Selamat Datang</H1>
     <!-- Indicators -->

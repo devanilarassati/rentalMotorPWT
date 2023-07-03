@@ -1,5 +1,6 @@
 <section class="jumbotron text-center">
     <div class="container marketing">
+    <br>
         <h2 class="display-6">Syarat Sewa Rental Motor di Rental Motor PWT</h2>
         <hr>
 

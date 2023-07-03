@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../assets/image/logo.jpg">
+    <link rel="shortcut icon" href="assets/image/logo.jpg">
     <!-- <title><?php echo $title ?></title> -->
     <title>Rental Motor PWT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top ">
         <div class="container">
-            <a class="navbar-brand" href=""><img src="../assets/image/logo.jpg" alt="Logo" class="img-fluid">
+            <a class="navbar-brand" href=""><img src="assets/image/logo.jpg" alt="Logo" class="img-fluid">
                 Rental Motor PWT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

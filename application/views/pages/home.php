@@ -2,24 +2,6 @@
 <link rel="stylesheet"  href="../assets/css/kelebihanWeb.css" >
 <link rel="stylesheet"  type="text/css" href="../assets/fontawesome/css/all.min.css" >
 
-<!-- <style>
-        body{
-            background-image: url(assets/image/bg.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100%;
-        }
-        .title{
-            text-align: center;
-            font-size: 2.5em;
-            color: #000;
-        }
-
-        
-    </style> -->
-
 <!-- STYLE TEXT DIGAMBAR -->
 <style>
       .image-container {
@@ -43,8 +25,47 @@
       .image-text p {
         font-size: 30px;
       }
- </style>
 
+      .logo {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-left: 20px;
+      width: 45px; /* Ubah ukuran gambar logo sesuai kebutuhan */
+      height: auto;
+    }
+    .website-name {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+    }
+
+    .container-footer {
+      background-color: black; /* Ganti dengan kode warna yang diinginkan */
+      /* padding: 20px; Tambahkan padding sesuai kebutuhan */
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    
+
+    .info-web {
+      color: white;
+      margin-right: 20px; 
+      margin-left: 20px;
+      text-align: left;
+      flex-basis: 50%; 
+    }
+
+    .contact-info {
+      flex-basis: 50%; /*Menggunakan 50% lebar container untuk contact-info */
+}
+
+    /* Style web info */
+    
+
+ </style>
+<br><br>
 <div class="image-container">
     <img src="assets/image/rp2.jpg" width="1500" height="600" >
     <div class="image-text">
@@ -205,4 +226,36 @@
   </div>
 </div>
 <!-- End Kelebihan -->
+
+<div class="container-footer">
+  <div>
+    <img class="logo" src="assets/image/logo.jpg" alt="Logo Website">
+    <h1 class="website-name">Rental Motor PWT</h1>
+  </div>
+
+  <div class="info-web">
+      <p>JEJO Rental Motor melayani jasa sewa motor Jogja dengan motor keluaran terbaru nyaman bergaransi untuk wisatawan yang berlibur 
+        di Yogyakarta. Sehingga waktu liburan di jogja yang terbatas bisa maksimal dan lancar. 
+        Tentunya juga untuk mendukung pariwisata di Jogja semakin banyak yang berkunjung terima kasih</p>
+  <div>
+
+
+  <div>
+
+			<div class="contact-info">
+				<br><br>
+				<p>Silakan hubungi kami melalui form atau kontak berikut.</p>
+				<p><i class="fas fa-map-marker-alt"></i> Alamat: Asrama Wisma Az-Zahra Universitas Amikom Purwokerto</p>
+				<p><i class="fab fa-whatsapp"></i> Telepon/Whatsapp: 0822 - 6510 - 7472</p>
+				<p><i class="far fa-calendar-plus"></i> Hari Buka: Setiap Hari</p>
+				<p><i class="far fa-clock"></i> Jam Buka: 06.00 - 22.00</p>
+				<p><i class="far fa-envelope"></i> Email: rentalmotorpwt@gmail.com</p>
+				<p><i class="fab fa-instagram"></i> Instagram: @rentalmotorpwtAja</p>
+			</div>
+
+	</div>
+
+</div>
+
+
 <hr>

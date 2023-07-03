@@ -36,8 +36,8 @@
 
 </style>
 
-	<?php $this->load->view('elements/vHeader'); ?>
-	<br><br><br>
+	
+	<br>
 	<div class="text-center">
 		<h1>Contact Us</h1>
 		</div>
@@ -71,7 +71,7 @@
 			<div class="contact-info">
 				<br><br>
 				<p>Silakan hubungi kami melalui form atau kontak berikut.</p>
-				<p><i class="fas fa-map-marker-alt"></i> Alamat: 123 Street, City, Country</p>
+				<p><i class="fas fa-map-marker-alt"></i> Alamat: Asrama Wisma Az-Zahra Universitas Amikom Purwokerto</p>
 				<p><i class="fab fa-whatsapp"></i> Telepon/Whatsapp: 0822 - 6510 - 7472</p>
 				<p><i class="far fa-calendar-plus"></i> Hari Buka: Setiap Hari</p>
 				<p><i class="far fa-clock"></i> Jam Buka: 06.00 - 22.00</p>
@@ -86,7 +86,7 @@
 
 	<!--footer Contact-->
     <footer class="bg-dark text-white mb-3">
-        <div class="container">
+        <!-- <div class="container">
             <div class="row p-3">
                 <div class="col-sm-8 col-xxl-9">
                     <div class="mb-3">
@@ -126,7 +126,7 @@
                     
                 </div>
             </div>
-        </div >
+        </div > -->
 
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
 			<p class="pull-right"><a href="#">Back to top</a></p>
@@ -137,3 +137,4 @@
     </footer>
     <!--end footer-->
 </html>
+
