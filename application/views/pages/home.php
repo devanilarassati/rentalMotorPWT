@@ -1,4 +1,5 @@
 <!-- <link rel="stylesheet"  href="../assets/css/whatsapp.css" > -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <link rel="stylesheet"  href="../assets/css/kelebihanWeb.css" >
 <link rel="stylesheet"  type="text/css" href="../assets/fontawesome/css/all.min.css" >
 
@@ -31,35 +32,48 @@
       vertical-align: middle;
       margin-right: 10px;
       margin-left: 20px;
-      width: 45px; /* Ubah ukuran gambar logo sesuai kebutuhan */
+      width: 200px; /* Ubah ukuran gambar logo sesuai kebutuhan */
       height: auto;
     }
     .website-name {
-      display: inline-block;
+      /* display: inline-block; */
+      /* display: inline; */
+      /* display: flex; */
       vertical-align: middle;
+      text-align: justify;
       color: white;
+      margin-right: 10px;
+      margin-left: 20px;
+      margin-top: 50px;
+      width: 500px; 
     }
 
     .container-footer {
       background-color: black; /* Ganti dengan kode warna yang diinginkan */
       /* padding: 20px; Tambahkan padding sesuai kebutuhan */
       display: flex;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       
     }
     
+    .contact-info {
+      /* flex-basis: 50%; Menggunakan 50% lebar container untuk contact-info */
+      margin-right: 10px; 
+      margin-left: 20px;
+      text-align: left;
+      /* flex-basis: 10%;  */
+      color: white;
+    }
 
-    .info-web {
+    /* .info-web {
       color: white;
       margin-right: 20px; 
       margin-left: 20px;
       text-align: left;
       flex-basis: 50%; 
-    }
+    } */
 
-    .contact-info {
-      flex-basis: 50%; /*Menggunakan 50% lebar container untuk contact-info */
-}
+    
 
     /* Style web info */
     
@@ -230,21 +244,20 @@
 <div class="container-footer">
   <div>
     <img class="logo" src="assets/image/logo.jpg" alt="Logo Website">
-    <h1 class="website-name">Rental Motor PWT</h1>
+    <!-- <h1 class="website-name">Rental Motor PWT</h1> -->
   </div>
 
-  <div class="info-web">
-      <p>JEJO Rental Motor melayani jasa sewa motor Jogja dengan motor keluaran terbaru nyaman bergaransi untuk wisatawan yang berlibur 
-        di Yogyakarta. Sehingga waktu liburan di jogja yang terbatas bisa maksimal dan lancar. 
-        Tentunya juga untuk mendukung pariwisata di Jogja semakin banyak yang berkunjung terima kasih</p>
   <div>
-
+  <p class="website-name">Rental Motor PWT melayani jasa sewa motor Purwokerto dengan motor keluaran terbaru nyaman bergaransi untuk wisatawan yang berlibur 
+        di Purwokerto. Sehingga waktu liburan di Purwokerto yang terbatas bisa maksimal dan lancar. 
+        Tentunya juga untuk mendukung pariwisata di Purwokerto semakin banyak yang berkunjung terima kasih</p>
+  </div>
 
   <div>
 
 			<div class="contact-info">
 				<br><br>
-				<p>Silakan hubungi kami melalui form atau kontak berikut.</p>
+				<p>Silakan hubungi kami melalui kontak berikut.</p>
 				<p><i class="fas fa-map-marker-alt"></i> Alamat: Asrama Wisma Az-Zahra Universitas Amikom Purwokerto</p>
 				<p><i class="fab fa-whatsapp"></i> Telepon/Whatsapp: 0822 - 6510 - 7472</p>
 				<p><i class="far fa-calendar-plus"></i> Hari Buka: Setiap Hari</p>
@@ -252,10 +265,9 @@
 				<p><i class="far fa-envelope"></i> Email: rentalmotorpwt@gmail.com</p>
 				<p><i class="fab fa-instagram"></i> Instagram: @rentalmotorpwtAja</p>
 			</div>
-
 	</div>
 
 </div>
-
+<?php $this->load->view('elements/vFooterCustomer'); ?>
 
 <hr>
