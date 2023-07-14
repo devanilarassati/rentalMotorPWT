@@ -96,8 +96,6 @@
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="fab fa-youtube "></span>
-      <i class = "fab fa-youtube "> </i>
       <!-- <img src="assets/image/surat.svg" width:"300px" height:"300px" > -->
       <object data="assets/image/hujan.svg" width="200" height="200"> </object>
       <h4>2 Helm & 2 Jas Hujan</h4>
@@ -209,8 +207,6 @@
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="fab fa-youtube "></span>
-      <i class = "fab fa-youtube "> </i>
       <!-- <img src="assets/image/rental.jpg" width:"300px" height:"300px" > -->
       <object data="assets/image/rental.jpg" width="400" height="400"> </object>
     </div>

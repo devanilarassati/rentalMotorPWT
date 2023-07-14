@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 25, 2023 at 10:17 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: Jul 14, 2023 at 03:45 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.3.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,8 +33,15 @@ CREATE TABLE `tbl_contact` (
   `nama` varchar(32) NOT NULL,
   `email` varchar(32) NOT NULL,
   `pesan` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_contact`
+--
+
+INSERT INTO `tbl_contact` (`id_contact`, `nama`, `email`, `pesan`, `created_at`) VALUES
+(1, 'Naruto', 'naruto@gmail.com', 'sugoiii nee', '2023-07-02 08:54:11');
 
 -- --------------------------------------------------------
 
@@ -124,7 +131,8 @@ INSERT INTO `tbl_motor` (`id_motor`, `nm_motor`, `foto_motor`, `id_jenis`, `harg
 (5, 'Genio', 'honda-vario-125-esp-cbs-sonic-white-red-300x300.jpg', 1, 500000, 2345, 2020, 'putih', 'Honda', 2000, 0),
 (6, 'Nmax', 'yamaha-nmax.jpg', 1, 500000, 2345, 2020, 'Hitam', 'Honda', 2000, 0),
 (7, 'Nmax', 'berita-motor-di-indonesia-300x300.jpg', 1, 500000, 2345, 2020, 'Hitam', 'Honda', 2000, 0),
-(8, 'Motor PCX', 'yamaha-lexi-2015.jpg', 1, 500000, 2345, 2016, 'putih', 'honda', NULL, 5);
+(8, 'Motor PCX', 'yamaha-lexi-2015.jpg', 1, 500000, 2345, 2016, 'putih', 'honda', NULL, 5),
+(10, 'Verza', 'Honda-Verza-150-CW-Advance-White-300x300.jpg', 2, 80000, 90213, 2012, 'putih', 'yamaha', NULL, 23);
 
 -- --------------------------------------------------------
 
@@ -145,7 +153,7 @@ CREATE TABLE `tbl_pemesanan` (
 --
 
 INSERT INTO `tbl_pemesanan` (`id_pemesanan`, `id_customer`, `pembayaran`, `tgl_pemesanan`, `status_pemesanan`) VALUES
-('Pm001', 6, 100000, '2023-06-25', 'Menunggu');
+('Pm001', 5, 100000, '2023-07-01', 'Menunggu');
 
 -- --------------------------------------------------------
 
@@ -165,7 +173,7 @@ CREATE TABLE `tbl_pemesanan_detail` (
 --
 
 INSERT INTO `tbl_pemesanan_detail` (`id`, `id_pemesanan`, `id_motor`, `hari`) VALUES
-(3, 'Pm001', 2, 2);
+(4, 'Pm001', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -194,7 +202,11 @@ CREATE TABLE `tbl_user` (
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `lvl_user`, `nm_user`, `jenis_kelamin`, `nm_identitas`, `no_identitas`, `almt_user`, `notelp_user`, `email_user`) VALUES
 (1, 'devanils', 'Devanils12345', 'customer', 'Devani Laras Sati', 'Perempuan ', 'KTP ', '3303136009012000', 'LOSARI REMBANG', '2147483647', 'devani@gmail.com'),
 (2, 'Devinalarassita2001', 'Devina2001', 'customer', 'Devina', 'Perempuan ', 'Pasport ', '3303162537123123', 'Purbalingga', '082265107472', 'devina2001@gmail.com'),
-(3, 'admin', 'Valid12345', 'admin', 'Laras', 'Perempuan', 'KTP', '33031360073625', 'Purwokerto', '082265102321', 'adminrental@gmail.com');
+(3, 'admin', '$2y$10$dJM.fhwXTSUPRuH0VYPiDe8ISVE9Ni576zA01Uiz4suANt6MiC27e', 'admin', 'Laras', 'Perempuan', 'KTP', '33031360073625', 'Purwokerto', '082265102321', 'adminrental@gmail.com'),
+(4, 'Chanyeol', 'Chanyeol12345', 'customer', 'Park Chanyeol', 'Laki-Laki ', 'Pasport ', '87347819378136', 'Korea', '387812637123', 'ceye@gmail.com'),
+(5, 'Naruto', '$2y$10$dJM.fhwXTSUPRuH0VYPiDe8ISVE9Ni576zA01Uiz4suANt6MiC27e', 'customer', 'Naruto', 'Laki-Laki ', 'Pasport ', '9843923482784333', 'Konoha', '389123712367', 'naruto@gmail.com'),
+(7, 'Sita', '$2y$10$OkVY6IFv0bvqyDenE173HOg3lBF/b8HGiDDYKCYfVGeSMtPykW3h2', 'admin', 'Devina', 'Perempuan', 'KTP', '3741974713123211', 'Purwokerto', '082265172822', 'devina2001@gmail.com'),
+(8, 'devinals', '$2y$10$xPoBb2W.D4QGjkESA9EirOKRdUcPoP4KX1WWMH4jCq9RLjWBYxr5u', 'customer', 'Devina', 'Perempuan ', 'KTP ', '3303136009602873', 'Purbalingga', '082265107472', 'devi@gmail');
 
 --
 -- Indexes for dumped tables
@@ -261,7 +273,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_contact`
 --
 ALTER TABLE `tbl_contact`
-  MODIFY `id_contact` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contact` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_jenis`
@@ -273,19 +285,19 @@ ALTER TABLE `tbl_jenis`
 -- AUTO_INCREMENT for table `tbl_motor`
 --
 ALTER TABLE `tbl_motor`
-  MODIFY `id_motor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_motor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_pemesanan_detail`
 --
 ALTER TABLE `tbl_pemesanan_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
