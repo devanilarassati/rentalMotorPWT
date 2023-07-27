@@ -47,23 +47,68 @@ class Rmotor_Controller extends CI_Controller
             $this->session->set_flashdata('notif', 'Anda Harus Masuk terlebih dahulu sebelum memesan.<br> Apabila belum punya akun silahkan klik tombol Daftar dibawah.');
             redirect('Login_Controller');
         } else {
-            $data = array(
-                'id'      => $this->input->post('id_motor'),
-                'hari'     => $this->input->post('hari'),
-                'price'   => $this->input->post('harga_rental'),
-                'name'    => $this->input->post('nm_motor')
-            );
+            $idMotor = $this->input->post('id_motor');
 
-            $this->cart->insert($data);
-            redirect('Rmotor_Controller');
+        // Cek apakah id_motor sudah ada dalam keranjang (cart)
+        $isMotorInCart = $this->checkMotorInCart($idMotor); 
+                if ($isMotorInCart) {
+                    $this->session->set_flashdata('notif', 'Anda hanya bisa memesan satu motor dengan ID yang sama.');
+                    echo '<script>alert("mohon maaf, anda hanya bisa menyewa 1 motor saja.");</script>';
+                    echo '<script>window.location.href = "'.site_url('Rmotor_Controller/rpesanan').'";</script>';
+                    // redirect('Rmotor_Controller/rpesanan');
+                } else {
+                    $data = array(
+                        'id'      => $idMotor,
+                        'hari'    => $this->input->post('hari'),
+                        'price'   => $this->input->post('harga_rental'),
+                        'name'    => $this->input->post('nm_motor')
+                    );
+                    $this->cart->insert($data);
+
+                    // $this->session->set_flashdata('notif', 'Penyewaan Motor Berhasil, Silakan lanjutkan transaksi.');
+                    echo '<script>alert("Penyewaan Motor Berhasil, Silakan lanjutkan transaksi.");</script>';
+                    echo '<script>window.location.href = "'.site_url('Rmotor_Controller/rpesanan').'";</script>';
+                }
+            // $data = array(
+            //     'id'      => $this->input->post('id_motor'),
+            //     'hari'     => $this->input->post('hari'),
+            //     'price'   => $this->input->post('harga_rental'),
+            //     'name'    => $this->input->post('nm_motor')
+            // );
+            // $this->cart->insert($data);
+            // echo '<script>alert("Penyewaan Motor Berhasil, Silakan lanjutkan transaksi.");</script>';
+            // echo '<script>window.location.href = "'.site_url('Rmotor_Controller/rpesanan').'";</script>';
+           
+           
+         
+            // $pesanNotifikasi = 'Pesanan Anda kosong. Silahkan pesan Motor terlebih dahulu.';
+            // $this->session->set_flashdata('rpesanan', $pesanNotifikasi);
+            // echo '<script>alert("'.$pesanNotifikasi.'"); history.back(self);</script>';
+
+            // redirect('Rmotor_Controller/rpesanan');
         }
+
+        
     }
+
+    private function checkMotorInCart($idMotor)
+{
+    // Di sini, Anda perlu melakukan pengecekan apakah id_motor sudah ada dalam keranjang (cart).
+    // Misalnya, Anda dapat mengiterasi isi keranjang dan memeriksa apakah id_motor sudah ada di dalamnya.
+    // Contoh simulasi: Jika id_motor ada dalam keranjang, maka dianggap sudah ada.
+    
+    $numOfMotors = count($this->cart->contents());
+    return $numOfMotors >= 1;
+}
+
 
     public function rpesanan()
     {
         if ($this->cart->total_items() == '0') {
-            $this->session->set_flashdata('rpesanan', 'rpesanan anda kosong.<br> Silahkan pesan terlebih dahulu.');
-            redirect('Rmotor_Controller');
+            // $this->session->set_flashdata('rpesanan', 'rpesanan anda kosong.<br> Silahkan pesan terlebih dahulu.');
+            $pesanNotifikasi = 'Pesanan Anda kosong. Silahkan rental motor terlebih dahulu.';
+            $this->session->set_flashdata('rpesanan', $pesanNotifikasi);
+            echo '<script>alert("'.$pesanNotifikasi.'"); history.back(self);</script>';
         } else {
 
             $data = array(
@@ -71,10 +116,37 @@ class Rmotor_Controller extends CI_Controller
                 'active_rpesanan' => 'active',
                 'id_pemesanan' => $this->Model_App->getIDPemesanan()
             );
-
+            
             $this->load->view('elements/vHeaderCustomer', $data);
             $this->load->view('pages/customer/rpesanan');
         }
+    }
+
+    public function detailRental()
+    {
+
+        // $data = array(
+        //     'data_rental' => $this->Model_App->getIdMotor($id),
+        // );
+
+        // $data['tbl_motor'] = $this->Model_App->getIdMotor($id);
+        // $this->load->view('pages/customer/detailRental', $data);
+
+        $data = array(
+            'id_rental' => $this->input->post('id_rental'),
+            'id_user' => $this->session->userdata('ID'),
+            'tgl_rental' => date("Y-m-d", strtotime($this->input->post('tgl_rental'))),
+            'tgl_kembali' => date("Y-m-d", strtotime($this->input->post('tgl_kembali')))
+        );
+        $this->Model_App->insertData("tbl_detailrental", $data);
+
+        // redirect('Rmotor_Controller/dataPesanan');
+
+        $this->load->view('elements/vHeaderCustomer');
+        $this->load->view('pages/customer/detailRental');
+        $this->load->view('elements/vFooterCustomer');
+        
+        //blom selesai
     }
 
 
@@ -118,12 +190,15 @@ class Rmotor_Controller extends CI_Controller
         $data = array(
             'title' => 'Rmotor Online',
             'active_pesanan' => 'active',
-            'data_pemesanan' => $this->Model_App->getDataPemesanan($id_customer)
+            'data_pemesanan' => $this->Model_App->getDataPemesanan($id_customer),
+            // 'data_pemesanan' => $this->Model_App->getDetailRental($id_user),
         );
 
         $this->load->view('elements/vHeaderCustomer', $data);
         $this->load->view('pages/customer/dataPesanan');
     }
+
+    
     public function detailPesanan()
     {
         $id = $this->uri->segment(3);
@@ -282,4 +357,5 @@ class Rmotor_Controller extends CI_Controller
         );
         $this->load->view('pages/customer/laporan', $data);
     }
+
 }

@@ -173,13 +173,27 @@
                             <h4><?php echo $row->nm_motor; ?></h4>
                             <p>Biaya Rental : <strong><?php echo currency_format($row->harga_rental); ?></strong> /Hari
                             </p>
-                            <input type="number" name="hari" placeholder="hari" required>
-                            <button type="submit">Pesan</button>
+                            <input type="number" name="hari" placeholder="hari" required max="3" oninput="checkMaxDays(this)">
+                            <button type="submit" class="btn btn-primary" >Rental</button>
                         </form>
                     </div>
                     <?php }
           }
           ?>
+
+          
+
+          <!-- Tampilan Alert Dialog Maksimal Waktu Penyewaan -->
+          <script>
+            function checkMaxDays(input) {
+                var maxDays = parseInt(input.getAttribute('max'));
+                var inputValue = parseInt(input.value);
+                if (inputValue > maxDays) {
+                    alert("Anda hanya bisa merental motor maksimal 3 hari. Jika ingin merental lagi, silakan rental ulang. Terimakasih.");
+                    input.value = maxDays; // Set nilai input menjadi maksimal (3) jika melebihi batas
+                }
+            }
+         </script>
                 </div>
             </div>
         </div>

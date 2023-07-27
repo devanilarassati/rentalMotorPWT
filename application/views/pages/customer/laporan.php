@@ -50,7 +50,7 @@
             text-align: center
         }
         </style>
-        <div align="left">
+        <!-- <div align="left">
             <?php if (isset($data_contact)) {
                 foreach ($data_contact as $row) { ?>
             <strong style="font-size: x-large; float: left; color: #3a87ad;"><?php echo $row->desc_contact ?></strong>
@@ -72,7 +72,7 @@
                     } ?>
                 </tr>
             </table>
-        </div>
+        </div> -->
         <br />
 
         <div align="center">

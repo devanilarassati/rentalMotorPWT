@@ -59,8 +59,8 @@
                 <li><a href="<?php echo site_url('Admin_Controller/pegawai') ?>"></i> Admin</a></li>
                 <li><a href="<?php echo site_url('Admin_Controller/customer') ?>"></i> Pelanggan</a></li>
                 <li><a href="<?php echo site_url('Admin_Controller/pemesanan') ?>"></i> Rentalan</a></li>
+                <li><a href="<?php echo site_url('Admin_Controller/laporan') ?>"></i> Laporan</a></li>
                 <li><a href="<?php echo site_url('Login_Controller/logout') ?>"></i> Keluar </a></li>
-
             </ul>
         </div>
 

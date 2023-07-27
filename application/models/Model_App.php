@@ -147,6 +147,7 @@ class Model_App extends CI_Model
         return $this->db->query("
     SELECT * FROM tbl_user WHERE id_user=$id_customer")->result();
     }
+
     function getDataPemesanan($id_customer)
     {
         return $this->db->query("
@@ -156,6 +157,8 @@ class Model_App extends CI_Model
             ORDER BY tgl_pemesanan ASC
         ")->result();
     }
+
+
     function getDataPemesanan1($id_user)
     {
         return $this->db->query("
@@ -322,6 +325,27 @@ class Model_App extends CI_Model
         FROM tbl_jk
         where id_gender = '$id'
         ")->result();
+    }
+
+    public function getFilteredTransactions($start_date, $end_date, $customer_name) {
+        $this->db->select('*');
+        $this->db->from('pemesanan');
+
+        if (!empty($start_date)) {
+            $this->db->where('transaction_date >=', $start_date);
+        }
+
+        if (!empty($end_date)) {
+            $this->db->where('transaction_date <=', $end_date);
+        }
+
+        if (!empty($customer_name)) {
+            $this->db->like('customer_name', $customer_name);
+        }
+
+        // Tambahkan kondisi filter lainnya jika diperlukan
+
+        return $this->db->get()->result();
     }
 }
     

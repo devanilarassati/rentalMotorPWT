@@ -386,8 +386,19 @@ class Admin_Controller extends CI_Controller
 
 
         $this->load->view('elements/vHeaderAdmin', $data);
-        $this->load->view('pages/admin/laporan/laporan');
+        $this->load->view('pages/admin/laporan/tgl_laporan'); //diubah
         $this->load->view('elements/vFooterAdmin');
+    }
+
+
+    public function laporanData() {
+        $data['transactions'] = $this->TransactionModel->getFilteredTransactions(
+            $this->input->post('start_date'),
+            $this->input->post('customer_name')
+            // Tambahkan field-filter lainnya sesuai kebutuhan
+        );
+
+        $this->load->view('report_view', $data); // Buat view untuk menampilkan hasil laporan
     }
     //  Pegawai
 
